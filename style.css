@@ -1,0 +1,33 @@
+.container{
+    display:grid;
+    
+    
+    grid-auto-rows: 50px;
+    grid-gap:1px;
+    margin-top:150px;
+    padding:0;
+    border-style:solid;
+    border-color:red;
+    
+   
+    
+   
+
+    justify-content:center;
+    
+
+
+}
+.gridbox{
+   border-style:solid;
+    
+
+  
+}
+
+    
+
+
+.gridbox:hover{
+    background-color:black;
+}

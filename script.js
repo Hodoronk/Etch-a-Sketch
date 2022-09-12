@@ -1,5 +1,9 @@
 const container = document.querySelector('.container');
 const input = document.querySelector('.input');
+const res = document.getElementById('#result');
+
+
+
 
 
 let num = input.value * input.value;
@@ -12,6 +16,9 @@ for(i = 1; i <= num; i++){
 }
 
 
+
 let rowNum = input.value;
-container.style.cssText = `grid-template-columns: repeat(${rowNum}, 50px);`;
+let pix = 500 / rowNum;
+container.style.cssText = `grid-template-columns: repeat(${rowNum}, ${pix}px);`;
+
 console.log(rowNum);

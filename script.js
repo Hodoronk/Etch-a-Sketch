@@ -6,25 +6,29 @@ const res = document.querySelector('#result');
 const input = document.querySelector('.input');
 let iVal;
 input.addEventListener ('click', function(e){
+
     iVal = input.value;
     console.log(`ival is ${iVal}`);
     let num = iVal * iVal;
     console.log(`num is ${num}`);
+    let pix = 500 / iVal;
+    container.style.cssText = `grid-template-columns: repeat(${iVal}, ${pix}px);`;
 
-
-
+    
 for(let i = 1; i <= num; i++){
     const newDiv = document.createElement('div');
     newDiv.id = 'r' + i;
     newDiv.classList = 'gridbox';
     container.appendChild(newDiv);
     console.log(i);
+    newDiv.addEventListener('click', function(){
+        newDiv.classList.toggle('rStyle');
+        });
 
 }
 
-let pix = 500 / iVal;
-let sidePix = pix / 4;
-container.style.cssText = `grid-template-columns: repeat(${iVal}, ${pix}px);`;
+
+
 // container.style.cssText = `grid-template-rows: repeat${iVal}, ${pix}px`;
 
 //rows compound each time aparently;

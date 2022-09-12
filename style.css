@@ -7,14 +7,13 @@
     grid-gap:0px;
     margin-top:200px;
     border-style:solid;
-    border-color:red;
+    border-color:rgb(102, 71, 15);
+    border-width:50px;
     border-width:20p;
-    
-    
-   
-    
-
-    
+    border-radius:10%;
+    box-shadow: 10px 15px;
+    margin-bottom:15px;
+    background-color:white;
 
 
 }
@@ -25,18 +24,29 @@ body{
     flex-direction:column;
     align-items: center;
     justify-content:center;
-    border-style:solid;
-    border-color:black;
-    border-width:5px;
+    background-color:rgb(182, 182, 2);
 }
 .controls{
     border-style:solid;
-    border-color:red;
-    border-width:2px;
+    border-color:rgb(102, 71, 15);
+    border-width:20px;
+    box-shadow: 10px 15px;
+    background-color: rgb(126, 102, 58);
+    border-radius:15%;
+    padding-right:250px;
+    padding-left:250px;
+    padding-top: 10px;
+    display:flex;
+    justify-content: center;
 }
-    
-
 
 .gridbox:hover{
     background-color:black;
+}
+#colored{
+    background-color: black;
+}
+
+#result{
+    font-size:20px;
 }

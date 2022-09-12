@@ -2,7 +2,6 @@
     display:grid;
     width:500px;
     height:500px;
-    
 
     grid-gap:0px;
     margin-top:200px;
@@ -49,4 +48,10 @@ body{
 
 #result{
     font-size:20px;
+}
+.gridbox{
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    
 }

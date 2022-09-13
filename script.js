@@ -2,6 +2,25 @@
 const container = document.querySelector('.container');
 const res = document.querySelector('#result');
 const input = document.querySelector('.input');
+const rainbow = document.getElementsByClassName('.rainbow')
+let rainbowCheck = 0;
+
+
+// function rainbowFun(){
+//     if(rainbowCheck === 0){
+//         rainbowCheck === 1;
+//         return rainbowCheck;
+//     }else if(rainbowCheck === 1){
+//         rainbowCheck === 0;
+//         return rainbowCheck;
+//     }
+// }
+
+// rainbow.addEventListener('click', rainbowFun(event));
+
+
+
+
 res.innerHTML = input.value;
 
 
@@ -20,7 +39,7 @@ input.addEventListener ('click', function(e){
     container.style.cssText = `grid-template-columns: repeat(${iVal}, ${pix}px);`;
     res.innerHTML = input.value;
 
-    console.log(container.childNodes);
+
     if(container.childNodes !== 'undefined'){ //if container already has children, we need to delete them so that they dont stack with each iteration
         removeAllChildNodes(container);
     }
@@ -40,16 +59,4 @@ for(let i = 1; i <= num; i++){
         });
 
 }
-
-
-
-// container.style.cssText = `grid-template-rows: repeat${iVal}, ${pix}px`;
-
-//rows compound each time aparently;
-console.log(`ival at the very end is ${iVal}`);
-console.log(`num at the end is ${num}`);
-
-
 });
-
-console.log(iVal);

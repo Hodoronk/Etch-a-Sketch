@@ -14,11 +14,11 @@
     grid-gap:0px;
     margin-top:100px;
     border-style:solid;
-    border-color:rgb(59, 59, 59);
-    border-width:20px;
+    border-color:rgb(61, 60, 60);
+    border-width:1px;
     border-width:20p;
-    border-radius:10%;
-    box-shadow: 5px 5px;
+    border-radius:5%;
+    box-shadow: 3px 3px;
     margin-bottom:15px;
     background-color:white;
 
@@ -31,15 +31,18 @@ body{
     flex-direction:column;
     align-items: center;
     justify-content:center;
-    background-color:rgb(114, 114, 109);
+    background-image: url('grady.jpg');
+    background-repeat:no-repeat;
+    background-size:1900px 1000px;
 }
 .controls{
     border-style:solid;
     border-color:rgb(44, 44, 44);
     border-width:2px;
-    box-shadow: 5px 5px;
-    background-color: rgb(73, 73, 73);
-    border-radius:5%;
+    box-shadow: 3px 3px;
+    background-color: rgb(73, 73, 73, 0.4);
+    
+    border-radius:1%;
     padding-right:100px;
     padding-left:100px;
     padding-top: 10px;
@@ -47,13 +50,13 @@ body{
     align-items:center;
     justify-content:space-between;
 }
-#result{
+#myValue{
     margin-left:20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight:bold;
 }
-.input{
-    background-color: aqua;
+.inputrange{
+    margin-bottom:5px;
 }
 
 .gridbox:hover{
@@ -67,7 +70,8 @@ body{
     font-size:20px;
     margin-left:40px;
     background-color:white;
-    border-radius:50%;
+    border-radius:20%;
+    padding:2px
 }
 /* .gridbox{
     /* border-style:solid;
@@ -75,23 +79,30 @@ body{
     border-width:1px; */
     
 .rStyle{
-    background-color:rgb(206, 31, 31);
+    background-color:black;
 }
 .clear{
-    border-radius:40%;
-    box-shadow:5px 5px;
+    border-radius:10%;
+    box-shadow:1px 1px;
     margin-left:40px;
     height:30px;
     font-family:helvetica;
     font-weight:bold;
 }
+.inputrange{
+display:flex;
+flex-direction:column;
+align-items: center;
+}
 .rainbow{
-    border-radius:40%;
-    box-shadow:5px 5px;
+    border-radius:10%;
+    box-shadow:1px 1px;
     margin-left:40px;
     height:30px;
     font-family:helvetica;
     font-weight:bold;
+
+
 }
 #title{
     font-family: 'BossFont';

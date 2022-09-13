@@ -1,8 +1,9 @@
 
 const container = document.querySelector('.container');
-const res = document.querySelector('#result');
+const res = document.querySelector('#myValue');
 const input = document.querySelector('.input');
 const rainbow = document.getElementsByClassName('.rainbow')
+const colorPick = document.querySelector('#cPick');
 let rainbowCheck = 0;
 
 
@@ -21,7 +22,7 @@ let rainbowCheck = 0;
 
 
 
-res.innerHTML = input.value;
+res.innerHTML = `${input.value} x ${input.value}`
 
 
 function removeAllChildNodes(parent){
@@ -32,12 +33,12 @@ function removeAllChildNodes(parent){
 
 let iVal;
 input.addEventListener ('click', function(e){
-
+    res.innerHTML = `${input.value} x ${input.value}`
     iVal = input.value;
     let num = iVal * iVal;
     let pix = 500 / iVal;
     container.style.cssText = `grid-template-columns: repeat(${iVal}, ${pix}px);`;
-    res.innerHTML = input.value;
+
 
 
     if(container.childNodes !== 'undefined'){ //if container already has children, we need to delete them so that they dont stack with each iteration

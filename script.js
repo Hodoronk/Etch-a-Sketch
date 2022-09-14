@@ -4,6 +4,7 @@ const res = document.querySelector('#myValue');
 const input = document.querySelector('.input');
 const rainbow = document.getElementsByClassName('.rainbow')
 const colorPick = document.querySelector('#cPick');
+const clearButton = document.querySelector('#resButton');
 let rainbowCheck = 0;
 let iVal;
 
@@ -30,8 +31,6 @@ for(let i = 1; i <= num; i++){
 
 }
 }
-
-
 res.innerHTML = `${input.value} x ${input.value}`
 
 
@@ -68,3 +67,11 @@ for(let i = 1; i <= num; i++){
 
 }
 });
+
+
+clearButton.addEventListener('click', function(e){
+    removeAllChildNodes(container);
+    doThing();
+});
+
+// rainbow.addEventListener('click')

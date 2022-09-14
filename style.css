@@ -73,14 +73,7 @@ body{
     border-radius:20%;
     padding:2px
 }
-/* .gridbox{
-    /* border-style:solid;
-    border-color:black;
-    border-width:1px; */
-    
-.rStyle{
-    background-color:black;
-}
+
 #resButton{
     border-radius:10%;
     box-shadow:1px 1px;
@@ -110,3 +103,4 @@ align-items: center;
     color:rgb(48, 2, 2);
     font-style:oblique;
 }
+

@@ -37,9 +37,7 @@ for(let i = 1; i <= num; i++){
     newDiv.id = 'r' + i;
     newDiv.classList = 'gridbox';
     container.appendChild(newDiv);
-    console.log(i);
     newDiv.addEventListener('click', function(e){
-        console.log(rainbowCheck);
 
         if(rainbowCheck === 0){
         newDiv.style.cssText = 'background-color:black';}
@@ -81,10 +79,12 @@ for(let i = 1; i <= num; i++){
     newDiv.id = 'r' + i;
     newDiv.classList = 'gridbox';
     container.appendChild(newDiv);
-    console.log(i);
-    newDiv.addEventListener('click', function(e){
-        console.log(rainbowCheck);
 
+
+
+
+    newDiv.addEventListener('click', function(e){
+        
         if(rainbowCheck === 0){
         newDiv.style.cssText = 'background-color:black';}
         else if(rainbowCheck === 1){    

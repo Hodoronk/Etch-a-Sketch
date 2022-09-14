@@ -74,7 +74,7 @@ body{
     padding:2px
 }
 
-#resButton{
+.clear{
     border-radius:10%;
     box-shadow:1px 1px;
     margin-left:40px;

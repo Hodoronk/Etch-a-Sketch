@@ -4,8 +4,10 @@ const res = document.querySelector('#myValue');
 const input = document.querySelector('.input');
 const rainbow = document.querySelector('#rainbow')
 const clearButton = document.querySelector('#resButton');
+const colorPick = document.querySelector('#colorpicker');
 let iVal;
 let rainbowCheck = 0;
+let targetVal
 
 
 rainbow.addEventListener('click', function(e){ 
@@ -13,8 +15,18 @@ rainbow.addEventListener('click', function(e){
         rainbowCheck = 1;
     }else if(rainbowCheck === 1){
         rainbowCheck =0
+    }else if(rainbowCheck === 3){
+        rainbowCheck = 1;
     }
 });
+
+
+colorPick.addEventListener('input', colorWatcher);
+function colorWatcher(e){
+    rainbowCheck = 3;
+    targetVal = e.target.value;
+}
+
 
 function removeAllChildNodes(parent){       // removes all of container's children
     while(parent.firstChild){
@@ -40,11 +52,14 @@ for(let i = 1; i <= num; i++){
     newDiv.classList = 'gridbox';
     container.appendChild(newDiv);
     newDiv.addEventListener('click', function(e){
+        
 
         if(rainbowCheck === 0){
         e.target.style.background = 'black';}
         else if(rainbowCheck === 1){    
             newDiv.style.cssText = `background-color:${'#' + Math.floor(Math.random() * 16777215).toString(16)}`;
+        }else if(rainbowCheck === 3){
+            e.target.style.background = `${targetVal}`;
         }
         });
 
@@ -54,10 +69,6 @@ res.innerHTML = `${input.value} x ${input.value}`
 
 
 
-
-
-
-// I can't manage to make input.addEventListener take doThing as a function, so instead I made it take the whole thing again. Need a fix for this
 doThing();
 input.addEventListener ('click', function(e){
     doThing();

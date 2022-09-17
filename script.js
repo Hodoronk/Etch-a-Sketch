@@ -5,17 +5,14 @@ const input = document.querySelector('.input');
 const rainbow = document.querySelector('#rainbow')
 const clearButton = document.querySelector('#resButton');
 const colorPick = document.querySelector('#colorpicker');
+const eraser = document.querySelector('#eraser');
 let iVal;
 let rainbowCheck = 0;
 let targetVal
 
 
 rainbow.addEventListener('click', function(e){ 
-    if(rainbowCheck === 0){
-        rainbowCheck = 1;
-    }else if(rainbowCheck === 1){
-        rainbowCheck =0
-    }else if(rainbowCheck === 3){
+    if(rainbowCheck !== 1){
         rainbowCheck = 1;
     }
 });
@@ -26,6 +23,11 @@ function colorWatcher(e){
     rainbowCheck = 3;
     targetVal = e.target.value;
 }
+eraser.addEventListener('click', function(e){
+    if(rainbowCheck !== 4){
+        rainbowCheck = 4;
+    }
+})
 
 
 function removeAllChildNodes(parent){       // removes all of container's children
@@ -36,6 +38,7 @@ function removeAllChildNodes(parent){       // removes all of container's childr
 }
 
 function doThing(){
+    rainbowCheck = 0;
     res.innerHTML = `${input.value} x ${input.value}`
     iVal = input.value;
     let num = iVal * iVal;
@@ -52,7 +55,6 @@ for(let i = 1; i <= num; i++){
     newDiv.classList = 'gridbox';
     container.appendChild(newDiv);
     newDiv.addEventListener('click', function(e){
-        
 
         if(rainbowCheck === 0){
         e.target.style.background = 'black';}
@@ -60,6 +62,8 @@ for(let i = 1; i <= num; i++){
             newDiv.style.cssText = `background-color:${'#' + Math.floor(Math.random() * 16777215).toString(16)}`;
         }else if(rainbowCheck === 3){
             e.target.style.background = `${targetVal}`;
+        }else if(rainbowCheck === 4){
+            e.target.style.background = 'white';
         }
         });
 

@@ -3,25 +3,27 @@ const container = document.querySelector('.container');
 const res = document.querySelector('#myValue');
 const input = document.querySelector('.input');
 const rainbow = document.querySelector('#rainbow')
-const colorPick = document.querySelector('#cPick');
 const clearButton = document.querySelector('#resButton');
-
 let iVal;
-let a, b, c = 0;
+let rainbowCheck = 0;
 
-let rainbowCheck;
-rainbow.addEventListener('click', function(e){
-    console.log(rainbowCheck);
+
+rainbow.addEventListener('click', function(e){ 
     if(rainbowCheck === 0){
         rainbowCheck = 1;
     }else if(rainbowCheck === 1){
         rainbowCheck =0
     }
-})
+});
 
+function removeAllChildNodes(parent){       // removes all of container's children
+    while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+        rainbowCheck = 0;
+    }
+}
 
 function doThing(){
-    rainbowCheck = 0;
     res.innerHTML = `${input.value} x ${input.value}`
     iVal = input.value;
     let num = iVal * iVal;
@@ -40,7 +42,7 @@ for(let i = 1; i <= num; i++){
     newDiv.addEventListener('click', function(e){
 
         if(rainbowCheck === 0){
-        newDiv.style.cssText = 'background-color:black';}
+        e.target.style.background = 'black';}
         else if(rainbowCheck === 1){    
             newDiv.style.cssText = `background-color:${'#' + Math.floor(Math.random() * 16777215).toString(16)}`;
         }
@@ -51,48 +53,14 @@ for(let i = 1; i <= num; i++){
 res.innerHTML = `${input.value} x ${input.value}`
 
 
-function removeAllChildNodes(parent){
-    while(parent.firstChild){
-        parent.removeChild(parent.firstChild);
-        rainbowCheck = 0;
-    }
-}
+
 
 
 
 // I can't manage to make input.addEventListener take doThing as a function, so instead I made it take the whole thing again. Need a fix for this
 doThing();
 input.addEventListener ('click', function(e){
-    rainbowCheck = 0;
-    res.innerHTML = `${input.value} x ${input.value}`
-    iVal = input.value;
-    let num = iVal * iVal;
-    let pix = 500 / iVal;
-    container.style.cssText = `grid-template-columns: repeat(${iVal}, ${pix}px);`;
-
-    if(container.childNodes !== 'undefined' || rainbowCheck === 1){ 
-        removeAllChildNodes(container);
-    }
-
-for(let i = 1; i <= num; i++){
-    const newDiv = document.createElement('div');
-    newDiv.id = 'r' + i;
-    newDiv.classList = 'gridbox';
-    container.appendChild(newDiv);
-
-
-
-
-    newDiv.addEventListener('click', function(e){
-        
-        if(rainbowCheck === 0){
-        newDiv.style.cssText = 'background-color:black';}
-        else if(rainbowCheck === 1){    
-            newDiv.style.cssText = `background-color:${'#' + Math.floor(Math.random() * 16777215).toString(16)}`;
-        }
-        });
-
-}
+    doThing();
 });
 
 
@@ -101,11 +69,3 @@ clearButton.addEventListener('click', function(e){
     rainbowCheck = 0;
     doThing();
 });
-
-
-// function prime(){
-//     removeAllChildNodes(container);
-//     rainbowCheck = 0;
-//     doThing();
-// }
-
